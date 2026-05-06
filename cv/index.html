@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Umar Sharif Muhammad Iglesias</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <style>
+        .cv-container {
+            background: white;
+            padding: 3rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-top: 10px solid var(--primary-color);
+        }
+        .cv-header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .cv-header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+        .cv-section h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .cv-item {
+            margin-bottom: 1.5rem;
+        }
+        .cv-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: #333;
+        }
+        .cv-item .date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media print {
+            body { background: white; }
+            .navbar, footer, .download-btn { display: none; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; max-width: none; }
+        }
+        @media (max-width: 600px) {
+            .cv-grid { grid-template-columns: 1fr; }
+            .cv-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="container nav-content">
+            <a href="/" class="logo">US.</a>
+            <nav class="nav-links">
+                <a href="/">Inicio</a>
+                <a href="/projects/">Proyectos</a>
+                <a href="/cv/">CV</a>
+                <a href="/contact/">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="text-align: right; margin-top: 2rem;">
+            <a href="/assets/cv.pdf" download class="btn btn-secondary download-btn">Descargar CV (PDF)</a>
+        </div>
+
+        <article class="cv-container">
+            <header class="cv-header">
+                <div>
+                    <h1>Umar Sharif Muhammad Iglesias</h1>
+                    <p>Desarrollador Web | Estudiante de SMR</p>
+                </div>
+                <div style="text-align: right; font-size: 0.9rem;">
+                    <p>📍 España</p>
+                    <p>📧 <a href="mailto:ummuig25@example.com">ummuig25@example.com</a></p>
+                    <p>🌐 <a href="https://github.com/ummuig25-netizen">github.com/ummuig25-netizen</a></p>
+                </div>
+            </header>
+
+            <div class="cv-grid">
+                <div class="cv-left">
+                    <section class="cv-section">
+                        <h2>Educación</h2>
+                        <div class="cv-item">
+                            <h3>Sistemas Microinformáticos y Redes (SMR)</h3>
+                            <p class="date">2024 - Presente</p>
+                            <p>Instituto de Educación Secundaria</p>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <h2>Habilidades</h2>
+                        <div class="cv-item">
+                            <h3>Lenguajes</h3>
+                            <p>HTML5, CSS3, JavaScript (ES6+), TypeScript, Python, SQL</p>
+                        </div>
+                        <div class="cv-item">
+                            <h3>Tecnologías</h3>
+                            <p>React, Node.js, Git, GitHub, Linux, Docker, Raspberry Pi</p>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="cv-right">
+                    <section class="cv-section">
+                        <h2>Experiencia & Proyectos</h2>
+                        <div class="cv-item">
+                            <h3>CYCLE-IT (Colaborador)</h3>
+                            <p class="date">2025 - Presente</p>
+                            <p>Desarrollo de aplicación para la gestión sostenible de hardware utilizando TypeScript y React.</p>
+                        </div>
+                        <div class="cv-item">
+                            <h3>RUVIA Urban Mobility</h3>
+                            <p class="date">2025</p>
+                            <p>Proyecto de plataforma de movilidad urbana enfocada en la eficiencia y sostenibilidad.</p>
+                        </div>
+                        <div class="cv-item">
+                            <h3>Disseny Web</h3>
+                            <p class="date">2024</p>
+                            <p>Colección de proyectos de diseño web enfocados en UI/UX y accesibilidad.</p>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <h2>Idiomas</h2>
+                        <p>Español (Nativo), Inglés (Intermedio), Catalán (Nativo)</p>
+                    </section>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Umar Sharif Muhammad Iglesias</p>
+        </div>
+    </footer>
+</body>
+</html>
