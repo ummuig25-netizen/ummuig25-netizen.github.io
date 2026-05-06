@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ummuig25-netizen.github.io/sitemap.xml
