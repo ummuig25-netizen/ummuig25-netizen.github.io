@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae | Umar Sharif Muhammad Iglesias</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
     <style>
         .cv-container {
             background: white;
             padding: 3rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 2rem auto;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
             border-top: 10px solid var(--primary-color);
@@ -20,22 +20,31 @@
             margin-bottom: 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
+            gap: 2rem;
         }
         .cv-header h1 {
             margin-bottom: 0.5rem;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+        }
+        .cv-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 3px solid #eee;
         }
         .cv-section {
             margin-bottom: 2rem;
         }
         .cv-section h2 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-bottom: 1px solid #ddd;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            color: var(--primary-color);
         }
         .cv-item {
             margin-bottom: 1.5rem;
@@ -46,23 +55,27 @@
             color: #333;
         }
         .cv-item .date {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--secondary-color);
             font-weight: 600;
         }
+        .cv-item .company {
+            font-weight: 700;
+            color: #555;
+        }
         .cv-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
         }
         @media print {
             body { background: white; }
             .navbar, footer, .download-btn { display: none; }
-            .cv-container { box-shadow: none; margin: 0; width: 100%; max-width: none; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; max-width: none; border-top: none; }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .cv-grid { grid-template-columns: 1fr; }
-            .cv-header { flex-direction: column; align-items: flex-start; }
+            .cv-header { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -86,64 +99,76 @@
 
         <article class="cv-container">
             <header class="cv-header">
-                <div>
+                <img src="https://github.com/ummuig25-netizen.png" alt="Umar Sharif" class="cv-photo">
+                <div style="flex-grow: 1;">
                     <h1>Umar Sharif Muhammad Iglesias</h1>
-                    <p>Desarrollador Web | Estudiante de SMR</p>
+                    <p>Desarrollador Web | Técnico CCTV | Estudiante SMR</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Multicultural: Pakistaní - Español 🇪🇸🇵🇰</p>
                 </div>
                 <div style="text-align: right; font-size: 0.9rem;">
-                    <p>📍 España</p>
+                    <p>📍 Barcelona, España</p>
                     <p>📧 <a href="mailto:ummuig25@example.com">ummuig25@example.com</a></p>
-                    <p>🌐 <a href="https://github.com/ummuig25-netizen">github.com/ummuig25-netizen</a></p>
                 </div>
             </header>
 
             <div class="cv-grid">
                 <div class="cv-left">
                     <section class="cv-section">
-                        <h2>Educación</h2>
+                        <h2>Experiencia Profesional</h2>
                         <div class="cv-item">
-                            <h3>Sistemas Microinformáticos y Redes (SMR)</h3>
+                            <h3>Técnico Reparador de Cámaras CCTV (Dual)</h3>
+                            <p class="company">By Demes Group</p>
                             <p class="date">2024 - Presente</p>
-                            <p>Instituto de Educación Secundaria</p>
+                            <ul>
+                                <li>Diagnóstico y reparación de sistemas de videovigilancia.</li>
+                                <li>Mantenimiento técnico de hardware especializado.</li>
+                                <li>Configuración de redes aplicadas a seguridad.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-item">
+                            <h3>CYCLE-IT (Colaborador Open Source)</h3>
+                            <p class="date">2025 - Presente</p>
+                            <p>Desarrollo de aplicación para la gestión sostenible de hardware (React + TypeScript).</p>
                         </div>
                     </section>
 
                     <section class="cv-section">
-                        <h2>Habilidades</h2>
+                        <h2>Educación</h2>
                         <div class="cv-item">
-                            <h3>Lenguajes</h3>
-                            <p>HTML5, CSS3, JavaScript (ES6+), TypeScript, Python, SQL</p>
-                        </div>
-                        <div class="cv-item">
-                            <h3>Tecnologías</h3>
-                            <p>React, Node.js, Git, GitHub, Linux, Docker, Raspberry Pi</p>
+                            <h3>Grado Medio en Sistemas Microinformáticos y Redes (SMR)</h3>
+                            <p class="date">2023 - Presente</p>
+                            <p>Especialización en montaje de equipos, redes locales y sistemas operativos.</p>
                         </div>
                     </section>
                 </div>
 
                 <div class="cv-right">
                     <section class="cv-section">
-                        <h2>Experiencia & Proyectos</h2>
+                        <h2>Idiomas</h2>
                         <div class="cv-item">
-                            <h3>CYCLE-IT (Colaborador)</h3>
-                            <p class="date">2025 - Presente</p>
-                            <p>Desarrollo de aplicación para la gestión sostenible de hardware utilizando TypeScript y React.</p>
+                            <h3>Urdu / Punjabi</h3>
+                            <p>Nativo (Hablado y escrito perfectamente)</p>
                         </div>
                         <div class="cv-item">
-                            <h3>RUVIA Urban Mobility</h3>
-                            <p class="date">2025</p>
-                            <p>Proyecto de plataforma de movilidad urbana enfocada en la eficiencia y sostenibilidad.</p>
+                            <h3>Español / Catalán</h3>
+                            <p>Nativo</p>
                         </div>
                         <div class="cv-item">
-                            <h3>Disseny Web</h3>
-                            <p class="date">2024</p>
-                            <p>Colección de proyectos de diseño web enfocados en UI/UX y accesibilidad.</p>
+                            <h3>Hindi</h3>
+                            <p>Nivel Alto (Competencia profesional)</p>
                         </div>
                     </section>
 
                     <section class="cv-section">
-                        <h2>Idiomas</h2>
-                        <p>Español (Nativo), Inglés (Intermedio), Catalán (Nativo)</p>
+                        <h2>Habilidades Técnicas</h2>
+                        <div class="cv-item">
+                            <h3>Web</h3>
+                            <p>HTML5, CSS3, JS (ES6+), React, TS</p>
+                        </div>
+                        <div class="cv-item">
+                            <h3>Sistemas & Hardware</h3>
+                            <p>Linux, Redes, CCTV, Raspberry Pi, Montaje PC</p>
+                        </div>
                     </section>
                 </div>
             </div>

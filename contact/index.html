@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Umar Sharif Muhammad Iglesias">
+    <title>Contacto | Umar Sharif</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .contact-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary-color);
+        }
+        .contact-card i, .contact-card svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .contact-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="container nav-content">
+            <a href="/" class="logo">US.</a>
+            <nav class="nav-links">
+                <a href="/">Inicio</a>
+                <a href="/projects/">Proyectos</a>
+                <a href="/cv/">CV</a>
+                <a href="/contact/">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section style="text-align: center;">
+            <h1>¿Hablamos?</h1>
+            <p>Conecta conmigo a través de mis redes o mándame un mensaje directo.</p>
+
+            <div class="contact-grid">
+                <!-- WhatsApp / Phone -->
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <h3>WhatsApp / Tel</h3>
+                    <p>Disponible para consultas rápidas y llamadas.</p>
+                    <a href="tel:+34000000000" class="btn btn-primary" id="btn-whatsapp">Llamar Ahora</a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <h3>LinkedIn</h3>
+                    <p>Conecta conmigo profesionalmente.</p>
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Perfil</a>
+                </div>
+
+                <!-- Instagram -->
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <h3>Instagram</h3>
+                    <p>Sígueme para ver mi lado más personal.</p>
+                    <a href="https://instagram.com/tu-perfil" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Seguir</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; 2026 Umar Sharif Muhammad Iglesias</p>
+        </div>
+    </footer>
+</body>
+</html>

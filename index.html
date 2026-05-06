@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio profesional de Umar Sharif Muhammad Iglesias - Web Developer & SMR Student">
     <title>Umar Sharif | Portfolio Profesional</title>
-    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" href="/favicon.ico">
 </head>
 <body>
@@ -23,12 +23,19 @@
 
     <main id="main-content">
         <section class="hero">
-            <div class="container">
-                <h1>Umar Sharif Muhammad Iglesias</h1>
-                <p>Web Developer | SMR Student | Passionate about sustainable tech 🌱</p>
-                <div class="hero-btns">
-                    <a href="/projects/" class="btn btn-secondary">Ver Proyectos</a>
-                    <a href="/cv/" class="btn btn-primary">Descargar CV</a>
+            <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                <img src="https://github.com/ummuig25-netizen.png" alt="Umar Sharif" style="width: 200px; height: 200px; border-radius: 50%; border: 5px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <div style="text-align: left; max-width: 600px;">
+                    <h1>Umar Sharif Muhammad Iglesias</h1>
+                    <p>Web Developer | SMR Student | CCTV Specialist</p>
+                    <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">
+                        Soy medio pakistaní y medio español. Hablo Urdu y Punjabi nativo, además de Español, Catalán e Hindi. 
+                        Actualmente realizo mi formación Dual en <strong>By Demes</strong> como técnico reparador de cámaras CCTV.
+                    </p>
+                    <div class="hero-btns" style="margin-top: 2rem;">
+                        <a href="/projects/" class="btn btn-secondary">Ver Proyectos</a>
+                        <a href="/cv/" class="btn btn-primary">Mi CV</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -36,7 +43,7 @@
         <section class="about">
             <div class="container">
                 <h2>Sobre mí</h2>
-                <p>Soy un desarrollador web en formación con un fuerte enfoque en la sostenibilidad tecnológica y el desarrollo moderno. Actualmente estudio Sistemas Microinformáticos y Redes (SMR) y colaboro en proyectos open-source.</p>
+                <p>Soy un apasionado de la tecnología con un perfil multicultural único. Mi experiencia combina el desarrollo de software moderno con habilidades técnicas en hardware y sistemas de seguridad. Siempre buscando aprender y crecer en el sector IT.</p>
                 <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
                     <div class="skill-card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                         <h3>Frontend</h3>
@@ -65,6 +72,6 @@
         </div>
     </footer>
 
-    <script src="/assets/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
