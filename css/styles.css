@@ -33,11 +33,53 @@ body {
     color: var(--text-main);
     background-color: var(--bg);
     overflow-x: hidden;
-    background-image: 
-        radial-gradient(circle at 10% 10%, rgba(129, 140, 248, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(244, 114, 182, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(45, 212, 191, 0.05) 0%, transparent 60%);
     min-height: 100vh;
+    position: relative;
+}
+
+/* Parallax Blobs */
+.parallax-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    transition: transform 0.1s linear;
+    will-change: transform;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary);
+    top: -100px;
+    left: -100px;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--secondary);
+    bottom: -50px;
+    right: -50px;
+}
+
+.blob-3 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent);
+    top: 40%;
+    left: 60%;
 }
 
 a {
@@ -297,16 +339,72 @@ section {
 }
 
 .project-card {
+    position: relative;
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
+    background: var(--surface);
+    border-radius: var(--radius);
+    border: 1px solid var(--glass-border);
     transition: var(--transition);
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
+/* Box Model Visualization (Margin) */
+.project-card::after {
+    content: 'MARGIN-BOX';
+    position: absolute;
+    inset: -15px;
+    border-radius: calc(var(--radius) + 10px);
+    border: 1px dashed var(--primary);
+    opacity: 0;
+    transition: var(--transition);
+    pointer-events: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: 0.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+/* Hover State */
 .project-card:hover {
-    transform: translateY(-10px);
+    border-color: var(--primary);
     background: var(--surface-hover);
-    border-color: var(--secondary);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 0 8px rgba(129, 140, 248, 0.05); /* Visualizing Padding */
+}
+
+.project-card:hover::after {
+    opacity: 0.3;
+    transform: translateZ(-30px);
+}
+
+/* Interactive Glow (managed by JS) */
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%), rgba(129, 140, 248, 0.15), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: var(--radius);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .project-card h3 {
@@ -336,6 +434,76 @@ section {
     border-radius: 100px;
     font-weight: 600;
     font-size: 0.8rem;
+}
+
+/* New Modern Tag System */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    max-width: 80%;
+}
+
+.badge {
+    background: var(--surface-hover);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    white-space: nowrap;
+    transition: var(--transition);
+    backdrop-filter: blur(4px);
+}
+
+.project-card:hover .badge {
+    border-color: var(--primary);
+    background: rgba(129, 140, 248, 0.1);
+}
+
+/* Icon Containers */
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.project-icon-container {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-hover);
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-icon-container {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--primary);
+    background: rgba(129, 140, 248, 0.1);
+}
+
+.project-icon-container img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: brightness(1.1) drop-shadow(0 0 8px rgba(129, 140, 248, 0.2));
+    border-radius: 4px;
+}
+
+.project-icon-container i {
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Academic Projects Specific */
@@ -542,54 +710,7 @@ section {
     color: var(--accent);
 }
 
-.project-card {
-    position: relative;
-    overflow: hidden;
-    padding: 2.5rem;
-    background: var(--surface);
-    border-radius: var(--radius);
-    border: 1px solid var(--glass-border);
-    transition: var(--transition);
-}
 
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(129, 140, 248, 0.1) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-}
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-.project-card:hover {
-    border-color: var(--primary);
-    background: var(--surface-hover);
-    transform: translateY(-5px);
-}
-
-.project-links {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.project-link {
-    font-weight: 600;
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.project-link:hover {
-    color: var(--secondary);
-}
 
 /* CV Page Styles */
 .cv-header-actions {

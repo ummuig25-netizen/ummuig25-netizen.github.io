@@ -4,6 +4,26 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Inject Parallax Background
+    const parallaxContainer = document.createElement('div');
+    parallaxContainer.className = 'parallax-container';
+    parallaxContainer.innerHTML = `
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    `;
+    document.body.prepend(parallaxContainer);
+
+    // Parallax Scroll Logic
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        const blobs = document.querySelectorAll('.blob');
+        blobs.forEach((blob, index) => {
+            const speed = (index + 1) * 0.2;
+            blob.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
     // 1. Estructura de Datos (Español)
     const subjectData = {
         disseny: {
@@ -174,6 +194,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    function initCards() {
+        const cards = document.querySelectorAll('.project-card, .skill-card');
+        cards.forEach(card => {
+            // Avoid duplicate listeners
+            if (card.dataset.tiltInit) return;
+            card.dataset.tiltInit = "true";
+
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+
+                // 3D Tilt Effect
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.01)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+            });
+        });
+    }
+
+    // Initialize cards on page load
+    initCards();
+
     // Selectores
     const tabBtns = document.querySelectorAll('.tab-btn');
     const contentArea = document.getElementById('dynamic-content-area');
@@ -223,14 +276,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (data.layout === 'list') {
                 html += '<div class="projects-grid">';
                 data.projects.forEach((p, index) => {
-                    let iconHTML = p.logo ? `<img src="${p.logo}" style="width: 40px; height: 40px; object-fit: contain;">` : `<i class="${p.icon || 'fa-solid fa-file-code'}" style="font-size: 1.5rem; color: ${p.color || 'var(--primary)'};"></i>`;
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
-                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
-                                <div class="tags" style="display: flex; gap: 0.5rem;">
-                                    ${p.tags ? p.tags.map(t => `<span class="badge" style="background: var(--surface-hover); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--glass-border);">${t}</span>`).join('') : ''}
+                            <div class="project-card-header">
+                                <div class="tags-container">
+                                    ${p.tags ? p.tags.map(t => `<span class="badge">${t}</span>`).join('') : ''}
                                 </div>
-                                ${iconHTML}
+                                <div class="project-icon-container">
+                                    ${p.logo ? `<img src="${p.logo}" alt="${p.title} logo">` : `<i class="${p.icon || 'fa-solid fa-file-code'}"></i>`}
+                                </div>
                             </div>
                             <h3>${p.title}</h3>
                             <p>${p.desc}</p>
@@ -263,17 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contentArea.innerHTML = html;
             contentArea.style.opacity = '1';
             
-            // Re-init interactivity
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--x', `${x}px`);
-                    card.style.setProperty('--y', `${y}px`);
-                });
-            });
+            // Re-init interactivity for dynamic content
+            initCards();
         }, 300);
     }
 
