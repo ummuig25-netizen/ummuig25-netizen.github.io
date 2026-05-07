@@ -54,8 +54,10 @@ body {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.15;
-    transition: transform 0.1s linear;
+    transition: transform 0.2s ease-out;
     will-change: transform;
+    transform: translateY(calc(var(--scroll-y, 0) * var(--speed, 0.1) * 1px)) 
+               translate(calc(var(--mouse-x, 0) * 30px), calc(var(--mouse-y, 0) * 30px));
 }
 
 .blob-1 {
@@ -64,6 +66,7 @@ body {
     background: var(--primary);
     top: -100px;
     left: -100px;
+    --speed: 0.05;
 }
 
 .blob-2 {
@@ -72,6 +75,7 @@ body {
     background: var(--secondary);
     bottom: -50px;
     right: -50px;
+    --speed: 0.12;
 }
 
 .blob-3 {
@@ -80,6 +84,7 @@ body {
     background: var(--accent);
     top: 40%;
     left: 60%;
+    --speed: 0.08;
 }
 
 a {
@@ -156,8 +161,9 @@ section {
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
+    letter-spacing: -0.5px;
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -353,36 +359,26 @@ section {
 
 /* Box Model Visualization (Margin) */
 .project-card::after {
-    content: 'MARGIN-BOX';
+    content: '';
     position: absolute;
-    inset: -15px;
-    border-radius: calc(var(--radius) + 10px);
-    border: 1px dashed var(--primary);
+    inset: -2px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    z-index: -1;
     opacity: 0;
     transition: var(--transition);
-    pointer-events: none;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 10px;
-    font-size: 0.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 2px;
 }
 
 /* Hover State */
 .project-card:hover {
     border-color: var(--primary);
-    background: var(--surface-hover);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        inset 0 0 0 8px rgba(129, 140, 248, 0.05); /* Visualizing Padding */
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .project-card:hover::after {
-    opacity: 0.3;
-    transform: translateZ(-30px);
+    opacity: 0.5;
+    filter: blur(8px);
 }
 
 /* Interactive Glow (managed by JS) */
@@ -473,16 +469,29 @@ section {
 }
 
 .project-icon-container {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--surface-hover);
-    border-radius: 14px;
-    border: 1px solid var(--glass-border);
     flex-shrink: 0;
     transition: var(--transition);
+    position: relative;
+}
+
+.project-icon-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary);
+    opacity: 0;
+    filter: blur(15px);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-icon-container::after {
+    opacity: 0.2;
 }
 
 .project-card:hover .project-icon-container {
@@ -580,6 +589,8 @@ section {
     color: var(--text-muted);
     font-size: 0.9rem;
     border: 1px solid var(--glass-border);
+    transform: translateY(calc(var(--scroll-y, 0) * 0.1px));
+    transition: transform 0.1s linear;
 }
 
 @keyframes fadeIn {

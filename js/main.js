@@ -16,12 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Parallax Scroll Logic
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const blobs = document.querySelectorAll('.blob');
-        blobs.forEach((blob, index) => {
-            const speed = (index + 1) * 0.2;
-            blob.style.transform = `translateY(${scrolled * speed}px)`;
-        });
+        document.documentElement.style.setProperty('--scroll-y', window.scrollY.toString());
+    });
+
+    // Mouse Parallax (Interactive background)
+    window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) - 0.5;
+        const y = (e.clientY / window.innerHeight) - 0.5;
+        document.documentElement.style.setProperty('--mouse-x', x.toString());
+        document.documentElement.style.setProperty('--mouse-y', y.toString());
     });
 
     // 1. Estructura de Datos (Español)
