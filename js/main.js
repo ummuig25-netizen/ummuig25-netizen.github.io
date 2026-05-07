@@ -56,12 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
             layout: "full",
             projects: [
                 {
-                    title: "Práctica de Crimpado RJ45",
-                    desc: "Demostración técnica del proceso de crimpado de un cable de red siguiendo la normativa T568B. Esta habilidad es esencial para garantizar conexiones estables y profesionales en cualquier infraestructura de red local.",
-                    longDesc: "En este vídeo muestro el proceso detallado: desde el pelado del cable UTP, la ordenación de los hilos según el estándar de colores, hasta el crimpado final y la comprobación de continuidad con el tester. Un trabajo preciso evita fallos intermitentes en la red.",
-                    features: ["Normativa T568B", "Uso de Crimpadora Profesional", "Ordenación de Pares Trenzados", "Testeo de Continuidad"],
-                    type: "video",
-                    videoSrc: "../RJ45.mov",
+                    title: "Crimpado de Cable RJ45 (Macho)",
+                    desc: "Dominio del crimpado de cables UTP bajo la normativa T568B para garantizar conexiones de red profesionales.",
+                    longDesc: "El crimpado de conectores RJ45 macho es fundamental para la creación de cables de red a medida. Aprendemos a destrenzar, alinear y crimpar los hilos siguiendo el estándar de colores para evitar interferencias y pérdidas de datos.",
+                    features: ["Normativa T568B", "Cable UTP Cat 6", "Testeo de Continuidad", "Uso de Crimpadora"],
+                    img: "../rj45_female_jack_install.png", // Usando la imagen generada de instalación
+                    link: "#"
+                },
+                {
+                    title: "Taller de Canaletas y Patch Panel",
+                    desc: "Instalación de infraestructura de red profesional utilizando conectores hembra y paneles de parcheo.",
+                    longDesc: "En este taller práctico, montamos una infraestructura real: instalación de canaletas de superficie, cableado estructurado, conexión de tomas RJ45 hembra (keystone) y terminación en el Patch Panel del rack. Aprendemos a gestionar el etiquetado y la organización profesional del cableado.",
+                    features: ["RJ45 Hembra (Keystone)", "Patch Panel Rack", "Canaletas de Superficie", "Etiquetado de Red"],
+                    img: "../patch_panel_cabling.png", // Usando la imagen generada de Patch Panel
                     link: "#"
                 }
             ]
@@ -176,14 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 html += '<div class="full-width-project">';
                 data.projects.forEach((p, index) => {
                     let mediaHTML = `<img src="${p.img}" alt="${p.title}" onerror="this.src='https://placehold.co/800x450/111111/ffffff?text=${p.title}'">`;
-                    if (p.type === 'video') {
-                        mediaHTML = `
-                            <video controls class="project-video-full" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                                <source src="${p.videoSrc}" type="video/mp4">
-                                Tu navegador no soporta el vídeo.
-                            </video>
-                        `;
-                    }
                     html += `
                         <div class="project-section animate-in ${index % 2 !== 0 ? 'reverse' : ''}" style="animation-delay: 0.2s">
                             <div class="project-media-full">
@@ -196,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     ${p.features.map(f => `<li>${f}</li>`).join('')}
                                 </ul>
                                 <div class="project-links">
-                                    <a href="${p.link}" target="_blank" class="btn btn-primary">${p.type === 'video' ? 'Ver Detalles' : 'Ver Proyecto'}</a>
+                                    <a href="${p.link}" target="_blank" class="btn btn-primary">Ver Detalles</a>
                                 </div>
                             </div>
                         </div>
