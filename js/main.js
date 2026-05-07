@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         disseny: {
             title: "Diseño Web",
             intro: "Mi repositorio de diseño web es el centro de mi aprendizaje técnico. Aquí he desarrollado proyectos que van desde el dominio del modelo de cajas hasta la creación de sitios web completos y responsivos, enfocándome en la semántica de HTML5 y la potencia visual de CSS3.",
-            layout: "list", // Variación de diseño
+            layout: "list", 
             projects: [
                 {
                     title: "Activitat Model de Caixes",
@@ -33,76 +33,76 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         muntatge: {
             title: "Montaje y Mantenimiento",
-            intro: "Aprendizaje del hardware desde la base física hasta la optimización de sistemas. Experiencia práctica en By Demes (2021-2022) montando estaciones de trabajo y realizando diagnósticos preventivos.",
+            intro: "En esta asignatura aprendemos el funcionamiento interno del hardware informático. Desde la identificación de componentes hasta el montaje completo de estaciones de trabajo, optimización de BIOS y diagnóstico de averías físicas. Es la base técnica para cualquier profesional IT.",
             layout: "grid",
             projects: [
                 {
-                    title: "Montaje Workstation By Demes",
-                    desc: "Configuración de hardware de alto rendimiento para videovigilancia.",
+                    title: "Montaje de Workstations",
+                    desc: "Proceso completo de ensamblaje de equipos de alto rendimiento, gestión de cableado y testeo de componentes.",
                     img: "workstation.jpg",
                     link: "#"
                 },
                 {
-                    title: "Diagnóstico POST",
-                    desc: "Resolución de fallos críticos en placas base mediante análisis de señales.",
-                    img: "diagnostic.jpg",
+                    title: "Mantenimiento Preventivo",
+                    desc: "Limpieza técnica, sustitución de pasta térmica y optimización de flujos de aire para alargar la vida útil del hardware.",
+                    img: "mantenimiento.jpg",
                     link: "#"
                 }
             ]
         },
         xarxes: {
             title: "Redes Locales",
-            intro: "Infraestructura de red, cableado estructurado y configuración de switches. Enfoque práctico en la conectividad empresarial.",
-            layout: "grid",
+            intro: "Estudio de las infraestructuras de comunicación. Aprendemos a diseñar, montar y configurar redes locales (LAN), comprendiendo desde el medio físico (cableado) hasta la configuración lógica de dispositivos de red.",
+            layout: "full",
             projects: [
                 {
-                    title: "Crimpado de Cable RJ45",
-                    desc: "Fabricación profesional siguiendo la norma T568B para redes de alta velocidad.",
+                    title: "Práctica de Crimpado RJ45",
+                    desc: "Demostración técnica del proceso de crimpado de un cable de red siguiendo la normativa T568B. Esta habilidad es esencial para garantizar conexiones estables y profesionales en cualquier infraestructura de red local.",
+                    longDesc: "En este vídeo muestro el proceso detallado: desde el pelado del cable UTP, la ordenación de los hilos según el estándar de colores, hasta el crimpado final y la comprobación de continuidad con el tester. Un trabajo preciso evita fallos intermitentes en la red.",
+                    features: ["Normativa T568B", "Uso de Crimpadora Profesional", "Ordenación de Pares Trenzados", "Testeo de Continuidad"],
                     type: "video",
-                    link: "#"
-                },
-                {
-                    title: "Configuración de VLANs",
-                    desc: "Segmentación de tráfico en redes locales para seguridad y rendimiento.",
-                    img: "vlan_config.png",
+                    videoSrc: "../RJ45.mov",
                     link: "#"
                 }
             ]
         },
         ofimatica: {
             title: "Aplicaciones Ofimáticas",
-            intro: "Automatización de la productividad empresarial. Gestión de datos avanzada con Excel y Access.",
-            layout: "grid",
+            intro: "Dominio de las herramientas esenciales para la productividad en el entorno empresarial. Trabajamos con la suite de Microsoft Office para gestionar documentos, datos y presentaciones de nivel profesional.",
+            layout: "list",
             projects: [
                 {
-                    title: "Gestión Automatizada de Stocks",
-                    desc: "Herramienta con macros para control de inventario en tiempo real.",
-                    img: "excel.png",
-                    link: "#"
+                    title: "Microsoft Word",
+                    desc: "Creación de documentos corporativos, uso de estilos, tablas de contenido y combinación de correspondencia.",
+                    tags: ["Procesador de Textos", "Informes", "Plantillas"]
                 },
                 {
-                    title: "DB de Taller Informático",
-                    desc: "Base de datos relacional para gestión de incidencias y clientes.",
-                    img: "access.png",
-                    link: "#"
+                    title: "Microsoft Excel",
+                    desc: "Gestión de datos mediante fórmulas avanzadas, funciones lógicas, tablas dinámicas y representación gráfica de información.",
+                    tags: ["Hojas de Cálculo", "Estadística", "Automatización"]
+                },
+                {
+                    title: "Microsoft Access",
+                    desc: "Diseño y administración de bases de datos relacionales, creación de consultas, formularios e informes de gestión.",
+                    tags: ["Bases de Datos", "SQL Básico", "Relaciones"]
                 }
             ]
         },
         digitalitzacio: {
             title: "Digitalización",
-            intro: "Transformación de procesos analógicos a flujos digitales seguros y eficientes mediante Cloud Computing y automatización.",
+            intro: "Análisis de la evolución tecnológica y su impacto en la sociedad y la industria. Estudiamos las revoluciones industriales para entender cómo hemos llegado a la era digital actual y hacia dónde nos dirigimos.",
             layout: "grid",
             projects: [
                 {
-                    title: "Migración a SharePoint",
-                    desc: "Digitalización de archivos históricos para consulta remota segura.",
-                    img: "cloud.png",
+                    title: "Las Revoluciones Industriales",
+                    desc: "Presentaciones detalladas sobre el paso de la máquina de vapor a la producción en masa, la electrónica y la actual Industria 4.0.",
+                    img: "industrial.png",
                     link: "#"
                 },
                 {
-                    title: "Automatización con Power Automate",
-                    desc: "Creación de flujos de aprobación automáticos para reducir tiempos.",
-                    img: "automate.png",
+                    title: "Tecnologías Disruptivas",
+                    desc: "Investigación sobre IA, Cloud Computing e IoT y cómo están digitalizando todos los sectores económicos.",
+                    img: "tech.png",
                     link: "#"
                 }
             ]
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sostenibilitat: {
             title: "Sostenibilidad",
             intro: "La sostenibilidad es un compromiso real en mi carrera. A través de la tecnología circular, busco reducir la huella de carbono y maximizar la eficiencia energética.",
-            layout: "full", // Diseño Premium Integrado
+            layout: "full", 
             projects: [
                 {
                     title: "CYCLE-IT: Gestión de Hardware Sostenible",
@@ -175,10 +175,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.layout === 'full') {
                 html += '<div class="full-width-project">';
                 data.projects.forEach((p, index) => {
+                    let mediaHTML = `<img src="${p.img}" alt="${p.title}" onerror="this.src='https://placehold.co/800x450/111111/ffffff?text=${p.title}'">`;
+                    if (p.type === 'video') {
+                        mediaHTML = `
+                            <video controls class="project-video-full" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                <source src="${p.videoSrc}" type="video/mp4">
+                                Tu navegador no soporta el vídeo.
+                            </video>
+                        `;
+                    }
                     html += `
                         <div class="project-section animate-in ${index % 2 !== 0 ? 'reverse' : ''}" style="animation-delay: 0.2s">
                             <div class="project-media-full">
-                                <img src="${p.img}" alt="${p.title}" onerror="this.src='https://placehold.co/800x450/111111/ffffff?text=${p.title}'">
+                                ${mediaHTML}
                             </div>
                             <div class="project-details-full">
                                 <h3>${p.title}</h3>
@@ -187,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     ${p.features.map(f => `<li>${f}</li>`).join('')}
                                 </ul>
                                 <div class="project-links">
-                                    <a href="${p.link}" target="_blank" class="btn btn-primary">Ver Proyecto</a>
+                                    <a href="${p.link}" target="_blank" class="btn btn-primary">${p.type === 'video' ? 'Ver Detalles' : 'Ver Proyecto'}</a>
                                 </div>
                             </div>
                         </div>
@@ -200,12 +209,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
                             <div class="tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                                ${p.tags.map(t => `<span class="badge" style="background: var(--surface-hover); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--glass-border);">${t}</span>`).join('')}
+                                ${p.tags ? p.tags.map(t => `<span class="badge" style="background: var(--surface-hover); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--glass-border);">${t}</span>`).join('') : ''}
                             </div>
                             <h3>${p.title}</h3>
                             <p>${p.desc}</p>
                             <div class="project-links">
-                                <a href="${p.link}" target="_blank" class="project-link">Ver Código →</a>
+                                ${p.link ? `<a href="${p.link}" target="_blank" class="project-link">Ver Código →</a>` : '<span class="text-muted">Proyecto de clase</span>'}
                             </div>
                         </div>
                     `;
@@ -214,21 +223,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 html += '<div class="projects-grid">';
                 data.projects.forEach((p, index) => {
-                    let mediaHTML = `<div class="project-img-placeholder">${p.title}</div>`;
-                    if (p.type === 'video') {
-                        mediaHTML = `
-                            <div class="video-placeholder" style="background: var(--surface); height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glass-border);">
-                                <p class="text-muted">🎞️ [Espacio para vídeo RJ45]</p>
-                            </div>
-                        `;
-                    }
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
-                            ${mediaHTML}
+                            <div class="project-img-placeholder" style="height: 150px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 1rem;">
+                                <span style="font-size: 2rem;">📂</span>
+                            </div>
                             <h3>${p.title}</h3>
                             <p>${p.desc}</p>
                             <div class="project-links">
-                                <a href="${p.link}" target="_blank" class="project-link">Ver Más →</a>
+                                <a href="${p.link}" target="_blank" class="project-link">Saber más →</a>
                             </div>
                         </div>
                     `;
