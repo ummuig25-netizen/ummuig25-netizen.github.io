@@ -3,59 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio profesional de Umar Sharif Muhammad Iglesias - Web Developer & SMR Student">
-    <title>Umar Sharif | Portfolio Profesional</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Portfolio profesional de Umar Sharif Muhammad Iglesias">
+    <title>Umar Sharif | Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="/favicon.ico">
 </head>
 <body>
     <header class="navbar" role="banner">
         <div class="container nav-content">
-            <a href="/" class="logo" aria-label="Inicio">US.</a>
+            <a href="index.html" class="logo" aria-label="Inicio">US.</a>
             <nav class="nav-links" role="navigation">
-                <a href="/">Inicio</a>
-                <a href="/projects/">Proyectos</a>
-                <a href="/cv/">CV</a>
-                <a href="/contact/">Contacto</a>
+                <a href="index.html" class="active">Inicio</a>
+                <a href="html/proyectos.html">Proyectos</a>
+                <a href="html/cv.html">CV</a>
+                <a href="html/contacto.html">Contacto</a>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
         <section class="hero">
-            <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-                <img src="https://github.com/ummuig25-netizen.png" alt="Umar Sharif" style="width: 200px; height: 200px; border-radius: 50%; border: 5px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                <div style="text-align: left; max-width: 600px;">
-                    <h1>Umar Sharif Muhammad Iglesias</h1>
-                    <p>Web Developer | SMR Student | CCTV Specialist</p>
-                    <p style="font-size: 1.1rem; margin-top: 1rem; opacity: 0.9;">
+            <div class="container hero-content animate-in">
+                <img src="https://github.com/ummuig25-netizen.png" alt="Umar Sharif" class="hero-avatar">
+                <div class="hero-text">
+                    <h1 class="gradient-text">Umar Sharif Muhammad Iglesias</h1>
+                    <p class="subtitle">Estudiante SMIX | Técnico By Demes</p>
+                    <p class="description">
                         Soy medio pakistaní y medio español. Hablo Urdu y Punjabi nativo, además de Español, Catalán e Hindi. 
                         Actualmente realizo mi formación Dual en <strong>By Demes</strong> como técnico reparador de cámaras CCTV.
                     </p>
-                    <div class="hero-btns" style="margin-top: 2rem;">
-                        <a href="/projects/" class="btn btn-secondary">Ver Proyectos</a>
-                        <a href="/cv/" class="btn btn-primary">Mi CV</a>
+                    <div class="hero-btns">
+                        <a href="html/proyectos.html" class="btn btn-secondary">Ver Proyectos</a>
+                        <a href="html/cv.html" class="btn btn-primary">Mi CV</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="about">
-            <div class="container">
-                <h2>Sobre mí</h2>
-                <p>Soy un apasionado de la tecnología con un perfil multicultural único. Mi experiencia combina el desarrollo de software moderno con habilidades técnicas en hardware y sistemas de seguridad. Siempre buscando aprender y crecer en el sector IT.</p>
-                <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <div class="skill-card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <div class="container animate-in" style="animation-delay: 0.2s;">
+                <h2 class="text-center gradient-text">Sobre mí</h2>
+                <p class="text-center section-desc">
+                    Soy un apasionado de la tecnología con un perfil multicultural único. Mi experiencia combina el desarrollo de software con habilidades técnicas en hardware y sistemas de seguridad.
+                </p>
+                <div class="skills-grid">
+                    <div class="skill-card glass">
                         <h3>Frontend</h3>
                         <p>HTML5, CSS3, JavaScript (ES6+), React, TypeScript</p>
                     </div>
-                    <div class="skill-card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div class="skill-card glass">
                         <h3>Herramientas</h3>
                         <p>Git, GitHub, VS Code, Node.js, Linux</p>
                     </div>
-                    <div class="skill-card" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <div class="skill-card glass">
                         <h3>Intereses</h3>
-                        <p>Sostenibilidad, Automatización, Hardware, Raspberry Pi</p>
+                        <p>Sostenibilidad, Automatización, Hardware, Cámaras CCTV</p>
                     </div>
                 </div>
             </div>
@@ -72,6 +74,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

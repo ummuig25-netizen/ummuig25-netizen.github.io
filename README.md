@@ -1,44 +1,35 @@
 # Portfolio Profesional - ummuig25-netizen
 
-Este es el repositorio de mi sitio web personal, hospedado en GitHub Pages.
+Repositorio personal con arquitectura 100% estática.
 
 ## 🚀 Tecnologías
-- **Frontend**: HTML5, CSS3 (Vanilla), JavaScript (ES6+)
-- **Automatización**: Node.js, Puppeteer (Generación de PDF), GitHub Actions
-- **SEO**: Sitemap XML, Robots.txt, WCAG AA Compliance
+- **HTML5**: Estructura semántica.
+- **CSS3**: Diseño premium personalizado con variables y glassmorfismo.
+- **JavaScript (Vanilla)**: Interactividad y carga dinámica de proyectos mediante la API de GitHub.
 
-## 📁 Estructura
-- `/index.html`: Inicio
-- `/cv/index.html`: Curriculum Vitae (HTML)
-- `/projects/index.html`: Proyectos dinámicos (GitHub API)
-- `/contact/index.html`: Formulario de contacto
-- `/assets/`: Estilos, scripts y el CV en PDF
-- `/scripts/`: Scripts de automatización
+## 📁 Estructura del Proyecto
+- `index.html`: Página principal y sección "Sobre mí".
+- `html/cv.html`: Currículum Vitae interactivo (Optimizado para impresión).
+- `html/proyectos.html`: Listado dinámico de repositorios de GitHub.
+- `html/contacto.html`: Enlaces de contacto y redes sociales.
+- `css/styles.css`: Hoja de estilos única para todo el sitio.
+- `js/main.js`: Lógica para la carga de proyectos.
+- `robots.txt` & `sitemap.xml`: Configuración SEO básica.
 
-## 🛠️ Instrucciones de Mantenimiento
+## 🛠️ Mantenimiento Manual
 
-### Actualizar el CV
-1. Edita el archivo `cv/index.html` con tu nueva información.
-2. Al hacer push a `main`, GitHub Actions regenerará automáticamente el PDF y actualizará el sitio.
+### Generar CV en PDF
+Para obtener la versión PDF de tu CV:
+1. Abre `html/cv.html` en tu navegador (Chrome o Edge recomendado).
+2. Presiona `Ctrl + P` (Imprimir).
+3. Selecciona **"Guardar como PDF"**.
+4. Asegúrate de que los gráficos de fondo estén habilitados en la configuración de impresión para mantener el diseño premium.
 
-### Regenerar Sitemap y Robots
-Los archivos `sitemap.xml` y `robots.txt` se actualizan automáticamente en cada despliegue a través del workflow de CI/CD.
+### Actualizar Proyectos
+Los proyectos se actualizan automáticamente cada vez que haces un cambio en tus repositorios públicos de GitHub, gracias a que el sitio consume directamente la API de GitHub en `js/main.js`.
 
-### Ejecutar Pruebas Locales
-Para validar el HTML y ejecutar Lighthouse localmente:
-```bash
-npm install
-npm run lint
-npm run lighthouse
-```
-
-## 🤖 CI/CD
-El despliegue se gestiona mediante GitHub Actions (`.github/workflows/deploy.yml`), que realiza las siguientes tareas:
-1. Valida el HTML con `html-validate`.
-2. Genera el sitemap actualizado.
-3. Genera el PDF del CV profesional.
-4. Ejecuta Lighthouse CI para asegurar la calidad y el rendimiento.
-5. Publica los cambios en la rama `main` y despliega en GitHub Pages.
+### SEO
+Si añades nuevas páginas, recuerda actualizar manualmente el archivo `sitemap.xml`.
 
 ---
 © 2026 Umar Sharif Muhammad Iglesias
