@@ -15,19 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Activitat Model de Caixes",
                     desc: "Dominio profundo del Box Model en CSS: márgenes, bordes, rellenos y cómo afectan al diseño visual de los elementos en la página.",
                     link: "https://github.com/ummuig25-netizen/disseny-web/tree/main/Activitat_Model_Caixes_Muhammad%20Iglesias_Umar%20Sharif",
-                    tags: ["CSS3", "Box Model", "Layout"]
+                    tags: ["CSS3", "Box Model", "Layout"],
+                    icon: "fa-brands fa-css3-alt"
                 },
                 {
                     title: "Activitat Lloc Web Completo",
                     desc: "Creación de una estructura de sitio web integral, aplicando jerarquía visual y navegación intuitiva.",
                     link: "https://github.com/ummuig25-netizen/disseny-web/tree/main/Activitat_lloc_web_Umar%20Sharif%20Muhammad",
-                    tags: ["HTML5", "UX/UI", "Estructura"]
+                    tags: ["HTML5", "UX/UI", "Estructura"],
+                    icon: "fa-solid fa-globe"
                 },
                 {
                     title: "Práctica P4 CSS Avanzado",
                     desc: "Experimentos con selectores complejos, pseudoclases y maquetación avanzada para interfaces modernas.",
                     link: "https://github.com/ummuig25-netizen/disseny-web/tree/main/P4_CSS_Umar%20Sharif%20Muhammad%20Iglesias",
-                    tags: ["CSS Moderno", "Selectores", "Styling"]
+                    tags: ["CSS Moderno", "Selectores", "Styling"],
+                    icon: "fa-solid fa-code"
                 }
             ]
         },
@@ -40,13 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Montaje de Workstations",
                     desc: "Proceso completo de ensamblaje de equipos de alto rendimiento, gestión de cableado y testeo de componentes.",
                     img: "workstation.jpg",
-                    link: "#"
+                    link: "#",
+                    icon: "fa-solid fa-microchip"
                 },
                 {
                     title: "Mantenimiento Preventivo",
                     desc: "Limpieza técnica, sustitución de pasta térmica y optimización de flujos de aire para alargar la vida útil del hardware.",
                     img: "mantenimiento.jpg",
-                    link: "#"
+                    link: "#",
+                    icon: "fa-solid fa-screwdriver-wrench"
                 }
             ]
         },
@@ -60,16 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     desc: "Dominio del crimpado de cables UTP bajo la normativa T568B para garantizar conexiones de red profesionales.",
                     longDesc: "El crimpado de conectores RJ45 macho es fundamental para la creación de cables de red a medida. Aprendemos a destrenzar, alinear y crimpar los hilos siguiendo el estándar de colores para evitar interferencias y pérdidas de datos.",
                     features: ["Normativa T568B", "Cable UTP Cat 6", "Testeo de Continuidad", "Uso de Crimpadora"],
-                    img: "../rj45_female_jack_install.png", // Usando la imagen generada de instalación
-                    link: "#"
+                    img: "../rj45_female_jack_install.png", 
+                    link: "#",
+                    icon: "fa-solid fa-network-wired"
                 },
                 {
                     title: "Taller de Canaletas y Patch Panel",
                     desc: "Instalación de infraestructura de red profesional utilizando conectores hembra y paneles de parcheo.",
                     longDesc: "En este taller práctico, montamos una infraestructura real: instalación de canaletas de superficie, cableado estructurado, conexión de tomas RJ45 hembra (keystone) y terminación en el Patch Panel del rack. Aprendemos a gestionar el etiquetado y la organización profesional del cableado.",
                     features: ["RJ45 Hembra (Keystone)", "Patch Panel Rack", "Canaletas de Superficie", "Etiquetado de Red"],
-                    img: "../patch_panel_cabling.png", // Usando la imagen generada de Patch Panel
-                    link: "#"
+                    img: "../patch_panel_cabling.png", 
+                    link: "#",
+                    icon: "fa-solid fa-server"
                 }
             ]
         },
@@ -81,17 +88,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     title: "Microsoft Word",
                     desc: "Creación de documentos corporativos, uso de estilos, tablas de contenido y combinación de correspondencia.",
-                    tags: ["Procesador de Textos", "Informes", "Plantillas"]
+                    tags: ["Procesador de Textos", "Informes", "Plantillas"],
+                    icon: "fa-solid fa-file-word",
+                    color: "#2b579a"
                 },
                 {
                     title: "Microsoft Excel",
                     desc: "Gestión de datos mediante fórmulas avanzadas, funciones lógicas, tablas dinámicas y representación gráfica de información.",
-                    tags: ["Hojas de Cálculo", "Estadística", "Automatización"]
+                    tags: ["Hojas de Cálculo", "Estadística", "Automatización"],
+                    icon: "fa-solid fa-file-excel",
+                    color: "#217346"
                 },
                 {
                     title: "Microsoft Access",
                     desc: "Diseño y administración de bases de datos relacionales, creación de consultas, formularios e informes de gestión.",
-                    tags: ["Bases de Datos", "SQL Básico", "Relaciones"]
+                    tags: ["Bases de Datos", "SQL Básico", "Relaciones"],
+                    icon: "fa-solid fa-database",
+                    color: "#a4373a"
                 }
             ]
         },
@@ -104,13 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Las Revoluciones Industriales",
                     desc: "Presentaciones detalladas sobre el paso de la máquina de vapor a la producción en masa, la electrónica y la actual Industria 4.0.",
                     img: "industrial.png",
-                    link: "#"
+                    link: "#",
+                    icon: "fa-solid fa-industry"
                 },
                 {
                     title: "Tecnologías Disruptivas",
                     desc: "Investigación sobre IA, Cloud Computing e IoT y cómo están digitalizando todos los sectores económicos.",
                     img: "tech.png",
-                    link: "#"
+                    link: "#",
+                    icon: "fa-solid fa-robot"
                 }
             ]
         },
@@ -125,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     longDesc: "CYCLE-IT une tecnología, inclusión y sostenibilidad. Implementamos trazabilidad de CO₂ mediante QR, optimización energética con IoT y accesibilidad universal con lectores Orca. Es una solución integral para empresas que buscan reducir su impacto ambiental mediante el reacondicionamiento inteligente de hardware.",
                     features: ["Trazabilidad CO2 via QR", "Optimización IoT", "Economía Circular", "Accesibilidad Orca", "Dashboard Tiempo Real", "Gestión de Residuos"],
                     img: "../cycle_it_dashboard_mockup.png",
-                    link: "https://github.com/epuertasa/CYCLE-IT"
+                    link: "https://github.com/epuertasa/CYCLE-IT",
+                    icon: "fa-solid fa-leaf"
                 }
             ]
         },
@@ -138,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Technical Support Guide",
                     desc: "Guía de resolución de problemas Wi-Fi escrita íntegramente en inglés.",
                     img: "english.png",
-                    link: "#"
+                    link: "#",
+                    icon: "fa-solid fa-language"
                 }
             ]
         },
@@ -153,7 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     longDesc: "RUVIA es una plataforma socio-gremial con seguridad avanzada y transparencia en tiempo real. Utiliza una arquitectura moderna basada en TypeScript y React para conectar conductores de forma eficiente y segura.",
                     features: ["Seguridad Avanzada", "Arquitectura TS", "Transparencia Gremial", "UI/UX Premium"],
                     img: "ruvia_preview.png",
-                    link: "https://github.com/ummuig25-netizen/RUVIA"
+                    link: "https://github.com/ummuig25-netizen/RUVIA",
+                    icon: "fa-solid fa-car"
                 }
             ]
         }
@@ -189,7 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${mediaHTML}
                             </div>
                             <div class="project-details-full">
-                                <h3>${p.title}</h3>
+                                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                    <i class="${p.icon || 'fa-solid fa-rocket'}" style="font-size: 2rem; color: var(--primary);"></i>
+                                    <h3 style="margin-bottom: 0;">${p.title}</h3>
+                                </div>
                                 <p>${p.longDesc || p.desc}</p>
                                 <ul class="feature-list">
                                     ${p.features.map(f => `<li>${f}</li>`).join('')}
@@ -207,8 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.projects.forEach((p, index) => {
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
-                            <div class="tags" style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                                ${p.tags ? p.tags.map(t => `<span class="badge" style="background: var(--surface-hover); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--glass-border);">${t}</span>`).join('') : ''}
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <div class="tags" style="display: flex; gap: 0.5rem;">
+                                    ${p.tags ? p.tags.map(t => `<span class="badge" style="background: var(--surface-hover); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--glass-border);">${t}</span>`).join('') : ''}
+                                </div>
+                                <i class="${p.icon || 'fa-solid fa-file-code'}" style="font-size: 1.5rem; color: ${p.color || 'var(--primary)'};"></i>
                             </div>
                             <h3>${p.title}</h3>
                             <p>${p.desc}</p>
@@ -224,8 +248,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.projects.forEach((p, index) => {
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
-                            <div class="project-img-placeholder" style="height: 150px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 1rem;">
-                                <span style="font-size: 2rem;">📂</span>
+                            <div class="project-img-placeholder" style="height: 150px; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 1rem; position: relative;">
+                                <i class="${p.icon || 'fa-solid fa-folder-open'}" style="font-size: 3rem; opacity: 0.5;"></i>
                             </div>
                             <h3>${p.title}</h3>
                             <p>${p.desc}</p>
