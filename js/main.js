@@ -236,6 +236,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!contentArea) return;
 
+    const tagIconMap = {
+        // Web Design
+        'Sintaxis': 'fa-code',
+        'Etiquetas': 'fa-tags',
+        'SEO': 'fa-search',
+        'Layout': 'fa-layer-group',
+        'Flexbox': 'fa-boxes-stacked',
+        'Grid': 'fa-table-cells',
+        'Animaciones': 'fa-clapperboard',
+        'Responsive': 'fa-mobile-screen',
+        // Office
+        'Procesador de Textos': 'fa-file-lines',
+        'Informes': 'fa-chart-simple',
+        'Plantillas': 'fa-copy',
+        'Hojas de Cálculo': 'fa-table',
+        'Estadística': 'fa-chart-pie',
+        'Automatización': 'fa-robot',
+        'Bases de Datos': 'fa-database',
+        'SQL Básico': 'fa-terminal',
+        'Relaciones': 'fa-link'
+    };
+
     function renderCategory(category) {
         const data = subjectData[category];
         if (!data) return;
@@ -281,17 +303,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.projects.forEach((p, index) => {
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
-                            <div class="project-card-header">
-                                <div class="tags-container">
-                                    ${p.tags ? p.tags.map(t => `<span class="badge">${t}</span>`).join('') : ''}
+                            <div class="project-card-header" style="flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
+                                <div class="project-icon-container" style="width: 80px; height: 80px;">
+                                    ${p.logo ? `<img src="${p.logo}" alt="${p.title} logo" style="width: 60px; height: 60px;">` : `<i class="${p.icon || 'fa-solid fa-file-code'}" style="font-size: 2.5rem;"></i>`}
                                 </div>
-                                <div class="project-icon-container">
-                                    ${p.logo ? `<img src="${p.logo}" alt="${p.title} logo">` : `<i class="${p.icon || 'fa-solid fa-file-code'}"></i>`}
+                                <div class="tags-container" style="justify-content: center; max-width: 100%;">
+                                    ${p.tags ? p.tags.map(t => `
+                                        <span class="badge" title="${t}">
+                                            <i class="fa-solid ${tagIconMap[t] || 'fa-tag'}"></i>
+                                            <span class="badge-text" style="margin-left: 5px;">${t}</span>
+                                        </span>
+                                    `).join('') : ''}
                                 </div>
                             </div>
-                            <h3>${p.title}</h3>
-                            <p>${p.desc}</p>
-                            <div class="project-links">
+                            <h3 style="text-align: center; margin-top: 1rem; font-size: 1.2rem; opacity: 0.8;">${p.title}</h3>
+                            <p style="text-align: center; font-size: 0.95rem;">${p.desc}</p>
+                            <div class="project-links" style="justify-content: center;">
                                 ${p.link ? `<a href="${p.link}" target="_blank" class="project-link">Ver Código →</a>` : '<span class="text-muted">Proyecto de clase</span>'}
                             </div>
                         </div>
@@ -320,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contentArea.innerHTML = html;
             contentArea.style.opacity = '1';
             
-            // Re-init interactivity for dynamic content
+            // Re-init cards for dynamic content
             initCards();
         }, 300);
     }
