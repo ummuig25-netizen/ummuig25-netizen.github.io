@@ -89,19 +89,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Microsoft Word",
                     desc: "Creación de documentos corporativos, uso de estilos, tablas de contenido y combinación de correspondencia.",
                     tags: ["Procesador de Textos", "Informes", "Plantillas"],
-                    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg"
+                    logo: "../assets/word_logo.png"
                 },
                 {
                     title: "Microsoft Excel",
                     desc: "Gestión de datos mediante fórmulas avanzadas, funciones lógicas, tablas dinámicas y representación gráfica de información.",
                     tags: ["Hojas de Cálculo", "Estadística", "Automatización"],
-                    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg"
+                    logo: "../assets/excel_logo.png"
                 },
                 {
                     title: "Microsoft Access",
                     desc: "Diseño y administración de bases de datos relacionales, creación de consultas, formularios e informes de gestión.",
                     tags: ["Bases de Datos", "SQL Básico", "Relaciones"],
-                    logo: "https://upload.wikimedia.org/wikipedia/commons/0/01/Microsoft_Office_Access_%282019%E2%80%93present%29.svg"
+                    logo: "../assets/access_logo.png"
                 }
             ]
         },

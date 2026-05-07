@@ -6,6 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currículum Vitae | Umar Sharif Muhammad Iglesias</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ---- Animaciones de entrada ---- */
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(129,140,248,0.4); }
+            50%       { box-shadow: 0 0 0 12px rgba(129,140,248,0); }
+        }
+
+        .cv-container { animation: fadeScale 0.7s cubic-bezier(0.23,1,0.32,1) both; }
+
+        .cv-header { animation: slideInUp 0.6s 0.1s both; }
+        .cv-photo  { animation: pulse 3s ease-in-out infinite; border-radius: 50%; }
+
+        .cv-left  > * { animation: slideInLeft  0.6s both; }
+        .cv-left  > *:nth-child(1) { animation-delay: 0.2s; }
+        .cv-left  > *:nth-child(2) { animation-delay: 0.35s; }
+
+        .cv-right > * { animation: slideInRight 0.6s both; }
+        .cv-right > *:nth-child(1) { animation-delay: 0.2s; }
+        .cv-right > *:nth-child(2) { animation-delay: 0.35s; }
+
+        .cv-item {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            padding: 0.5rem 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .cv-item:hover {
+            transform: translateX(6px);
+            background: rgba(129,140,248,0.05);
+            box-shadow: 2px 0 0 var(--primary) inset;
+        }
+
+        /* ---- Botón de descarga / impresión ---- */
+        .cv-header-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .print-btn i { font-size: 1rem; }
+
+        /* ---- Skill pills ---- */
+        .skill-pill {
+            display: inline-block;
+            background: rgba(129,140,248,0.12);
+            border: 1px solid rgba(129,140,248,0.3);
+            color: var(--primary);
+            border-radius: 20px;
+            padding: 3px 12px;
+            font-size: 0.82rem;
+            margin: 3px 2px;
+        }
+
+        /* ---- Print styles ---- */
+        @media print {
+            .navbar, footer, .cv-header-actions { display: none !important; }
+            body { background: #fff !important; color: #000 !important; }
+            .cv-container { box-shadow: none !important; border: none !important; background: #fff !important; }
+            .gradient-text { -webkit-text-fill-color: #111 !important; }
+            * { animation: none !important; transition: none !important; }
+        }
+    </style>
 </head>
 
 <body>
@@ -23,7 +107,9 @@
 
     <main class="container pt-header animate-in">
         <div class="cv-header-actions">
-            <a href="../assets/cv.pdf" download class="btn btn-secondary download-btn">Descargar CV (PDF)</a>
+            <button onclick="window.print()" class="btn btn-secondary print-btn">
+                <i class="fa-solid fa-download"></i> Descargar CV (PDF)
+            </button>
         </div>
 
         <article class="cv-container glass">
@@ -37,13 +123,14 @@
                 <div class="cv-contact-info">
                     <p>📍 Barcelona, España</p>
                     <p>📧 <a href="mailto:ummuig25@example.com" class="primary-link">ummuig25@example.com</a></p>
+                    <p>💻 <a href="https://github.com/ummuig25-netizen" target="_blank" class="primary-link">github.com/ummuig25-netizen</a></p>
                 </div>
             </header>
 
             <div class="cv-grid">
                 <div class="cv-left">
                     <section class="cv-section">
-                        <h2>Experiencia Profesional</h2>
+                        <h2><i class="fa-solid fa-briefcase" style="color:var(--primary); margin-right:0.6rem;"></i>Experiencia Profesional</h2>
                         <div class="cv-item">
                             <h3>Técnico Reparador de Cámaras CCTV (Dual)</h3>
                             <span class="company">By Demes Group</span>
@@ -57,31 +144,28 @@
                         <div class="cv-item">
                             <h3>RUVIA (Proyecto Destacado)</h3>
                             <span class="date">2025</span>
-                            <p class="text-muted">Plataforma innovadora de movilidad urbana para el mercado español,
-                                enfocada en sostenibilidad y eficiencia para conductores.</p>
+                            <p class="text-muted">Plataforma innovadora de movilidad urbana para el mercado español, enfocada en sostenibilidad y eficiencia para conductores.</p>
                         </div>
                         <div class="cv-item">
                             <h3>CYCLE-IT (Colaborador Open Source)</h3>
                             <span class="date">2025 - Presente</span>
-                            <p class="text-muted">Desarrollo de aplicación para la gestión sostenible de hardware (React
-                                + TypeScript).</p>
+                            <p class="text-muted">Desarrollo de aplicación para la gestión sostenible de hardware (React + TypeScript).</p>
                         </div>
                     </section>
 
                     <section class="cv-section">
-                        <h2>Educación</h2>
+                        <h2><i class="fa-solid fa-graduation-cap" style="color:var(--primary); margin-right:0.6rem;"></i>Educación</h2>
                         <div class="cv-item">
                             <h3>Grado Medio en Sistemas Microinformáticos y Redes (SMIX)</h3>
                             <span class="date">2023 - Presente</span>
-                            <p class="text-muted">Especialización en montaje de equipos, redes locales y sistemas
-                                operativos.</p>
+                            <p class="text-muted">Especialización en montaje de equipos, redes locales y sistemas operativos.</p>
                         </div>
                     </section>
                 </div>
 
                 <div class="cv-right">
                     <section class="cv-section">
-                        <h2>Idiomas</h2>
+                        <h2><i class="fa-solid fa-language" style="color:var(--primary); margin-right:0.6rem;"></i>Idiomas</h2>
                         <div class="cv-item">
                             <h3>Urdu / Punjabi</h3>
                             <p class="text-muted">Nativo (Hablado perfectamente)</p>
@@ -96,19 +180,31 @@
                         </div>
                         <div class="cv-item">
                             <h3>Inglés</h3>
-                            <p class="text-muted">Nivel Avanzado (B2+ - Fluidez profesional)</p>
+                            <p class="text-muted">Nivel Avanzado (B2+ — Fluidez profesional)</p>
                         </div>
                     </section>
 
                     <section class="cv-section">
-                        <h2>Habilidades Técnicas</h2>
+                        <h2><i class="fa-solid fa-code" style="color:var(--primary); margin-right:0.6rem;"></i>Habilidades Técnicas</h2>
                         <div class="cv-item">
-                            <h3>Web</h3>
-                            <p class="text-muted">HTML5, CSS3, JS (ES6+), React, TS</p>
+                            <h3>Desarrollo Web</h3>
+                            <div>
+                                <span class="skill-pill">HTML5</span>
+                                <span class="skill-pill">CSS3</span>
+                                <span class="skill-pill">JavaScript</span>
+                                <span class="skill-pill">React</span>
+                                <span class="skill-pill">TypeScript</span>
+                            </div>
                         </div>
                         <div class="cv-item">
-                            <h3>Sistemas & Hardware</h3>
-                            <p class="text-muted">Linux, Redes, CCTV, Raspberry Pi, Montaje PC</p>
+                            <h3>Sistemas &amp; Hardware</h3>
+                            <div>
+                                <span class="skill-pill">Linux</span>
+                                <span class="skill-pill">Redes LAN</span>
+                                <span class="skill-pill">CCTV</span>
+                                <span class="skill-pill">Raspberry Pi</span>
+                                <span class="skill-pill">Montaje PC</span>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -121,6 +217,8 @@
             <p>&copy; 2026 Umar Sharif Muhammad Iglesias</p>
         </div>
     </footer>
+
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
