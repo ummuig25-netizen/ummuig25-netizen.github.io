@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         muntatge: {
             title: "Montaje y Mantenimiento",
-            intro: "Aprendizaje del hardware desde la base física hasta la optimización de sistemas. Montaje de estaciones de trabajo y diagnósticos preventivos en entornos reales.",
+            intro: "Aprendizaje del hardware desde la base física hasta la optimización de sistemas. Experiencia práctica en By Demes (2021-2022) montando estaciones de trabajo y realizando diagnósticos preventivos.",
             layout: "grid",
             projects: [
                 {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         angles: {
             title: "Inglés Técnico",
-            intro: "Competencia en lectura de documentación técnica, redacción de informes de soporte y comunicación profesional en el sector IT.",
+            intro: "Dominio avanzado del inglés técnico y profesional. Competencia en lectura de documentación compleja, redacción de informes de soporte y comunicación fluida en entornos IT internacionales.",
             layout: "grid",
             projects: [
                 {
