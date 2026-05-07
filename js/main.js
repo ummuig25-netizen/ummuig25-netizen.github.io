@@ -89,22 +89,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Microsoft Word",
                     desc: "Creación de documentos corporativos, uso de estilos, tablas de contenido y combinación de correspondencia.",
                     tags: ["Procesador de Textos", "Informes", "Plantillas"],
-                    icon: "fa-solid fa-file-word",
-                    color: "#2b579a"
+                    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg"
                 },
                 {
                     title: "Microsoft Excel",
                     desc: "Gestión de datos mediante fórmulas avanzadas, funciones lógicas, tablas dinámicas y representación gráfica de información.",
                     tags: ["Hojas de Cálculo", "Estadística", "Automatización"],
-                    icon: "fa-solid fa-file-excel",
-                    color: "#217346"
+                    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg"
                 },
                 {
                     title: "Microsoft Access",
                     desc: "Diseño y administración de bases de datos relacionales, creación de consultas, formularios e informes de gestión.",
                     tags: ["Bases de Datos", "SQL Básico", "Relaciones"],
-                    icon: "fa-solid fa-database",
-                    color: "#a4373a"
+                    logo: "https://upload.wikimedia.org/wikipedia/commons/0/01/Microsoft_Office_Access_%282019%E2%80%93present%29.svg"
                 }
             ]
         },
@@ -226,13 +223,14 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (data.layout === 'list') {
                 html += '<div class="projects-grid">';
                 data.projects.forEach((p, index) => {
+                    let iconHTML = p.logo ? `<img src="${p.logo}" style="width: 40px; height: 40px; object-fit: contain;">` : `<i class="${p.icon || 'fa-solid fa-file-code'}" style="font-size: 1.5rem; color: ${p.color || 'var(--primary)'};"></i>`;
                     html += `
                         <div class="project-card animate-in" style="animation-delay: ${0.1 * index}s">
                             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem;">
                                 <div class="tags" style="display: flex; gap: 0.5rem;">
                                     ${p.tags ? p.tags.map(t => `<span class="badge" style="background: var(--surface-hover); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid var(--glass-border);">${t}</span>`).join('') : ''}
                                 </div>
-                                <i class="${p.icon || 'fa-solid fa-file-code'}" style="font-size: 1.5rem; color: ${p.color || 'var(--primary)'};"></i>
+                                ${iconHTML}
                             </div>
                             <h3>${p.title}</h3>
                             <p>${p.desc}</p>
