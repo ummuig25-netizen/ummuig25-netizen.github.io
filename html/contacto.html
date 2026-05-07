@@ -6,6 +6,53 @@
     <meta name="description" content="Contacta con Umar Sharif Muhammad Iglesias">
     <title>Contacto | Umar Sharif</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-inline: auto;
+        }
+        .contact-card {
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius);
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            transition: var(--transition);
+            animation: fadeIn 0.6s both;
+        }
+        .contact-card:nth-child(1) { animation-delay: 0.1s; }
+        .contact-card:nth-child(2) { animation-delay: 0.2s; }
+        .contact-card:nth-child(3) { animation-delay: 0.3s; }
+        .contact-card:nth-child(4) { animation-delay: 0.4s; }
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            background: var(--surface-hover);
+        }
+        .contact-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-card h3 { font-size: 1.3rem; margin: 0; }
+        .contact-card p  { color: var(--text-muted); font-size: 1rem; margin: 0; }
+        .contact-card .btn { margin-top: 0.5rem; width: 100%; }
+    </style>
 </head>
 <body>
     <header class="navbar" role="banner">
@@ -26,28 +73,44 @@
             <p class="section-desc">Conecta conmigo a través de mis redes o envíame un mensaje directo.</p>
 
             <div class="contact-grid">
-                <!-- WhatsApp / Phone -->
-                <div class="contact-card glass">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    <h3>WhatsApp / Tel</h3>
-                    <p>Disponible para consultas rápidas y llamadas.</p>
-                    <a href="tel:+34000000000" class="btn btn-primary" id="btn-whatsapp">Llamar Ahora</a>
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon" style="background: rgba(234,88,12,0.15); color: #f97316;">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>red.dragonkrathos@gmail.com</p>
+                    <a href="mailto:red.dragonkrathos@gmail.com" class="btn btn-primary" id="btn-email">Enviar Email</a>
                 </div>
 
                 <!-- LinkedIn -->
-                <div class="contact-card glass">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <div class="contact-card">
+                    <div class="contact-icon" style="background: rgba(10,102,194,0.15); color: #0a66c2;">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
                     <h3>LinkedIn</h3>
                     <p>Conecta conmigo profesionalmente.</p>
-                    <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver Perfil</a>
+                    <a href="https://www.linkedin.com/in/umar-sharif-muhammad-iglesias-54b451408/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-linkedin">Ver Perfil</a>
                 </div>
 
                 <!-- Instagram -->
-                <div class="contact-card glass">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <div class="contact-card">
+                    <div class="contact-icon" style="background: rgba(225,48,108,0.15); color: #e1306c;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
                     <h3>Instagram</h3>
                     <p>Sígueme para ver mi lado más personal.</p>
-                    <a href="https://instagram.com/tu-perfil" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Seguir</a>
+                    <a href="https://www.instagram.com/just_umar8/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-instagram">Seguir</a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-card">
+                    <div class="contact-icon" style="background: rgba(255,255,255,0.08); color: #f8fafc;">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>Explora mis repositorios y proyectos.</p>
+                    <a href="https://github.com/ummuig25-netizen" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-github">Ver Código</a>
                 </div>
             </div>
         </section>
