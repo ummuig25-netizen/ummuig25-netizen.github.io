@@ -83,10 +83,65 @@
 
         /* ---- Print styles ---- */
         @media print {
+            @page {
+                margin: 1cm;
+                size: A4 portrait;
+            }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #fff !important; 
+                color: #000 !important;
+                font-size: 11px !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
             .navbar, footer, .cv-header-actions { display: none !important; }
-            body { background: #fff !important; color: #000 !important; }
-            .cv-container { box-shadow: none !important; border: none !important; background: #fff !important; }
-            .gradient-text { -webkit-text-fill-color: #111 !important; }
+            .pt-header { padding-top: 0 !important; margin-top: 0 !important; }
+            .cv-container { 
+                box-shadow: none !important; 
+                border: none !important; 
+                background: #fff !important; 
+                padding: 0 !important; 
+                margin: 0 !important;
+                transform: none !important;
+            }
+            .cv-header {
+                padding-bottom: 1rem !important;
+                margin-bottom: 1.5rem !important;
+                gap: 1.5rem !important;
+            }
+            .cv-photo {
+                width: 100px !important;
+                height: 100px !important;
+            }
+            .cv-grid {
+                display: flex !important;
+                gap: 2rem !important;
+            }
+            .cv-left { width: 65% !important; }
+            .cv-right { width: 35% !important; }
+            .cv-section {
+                margin-bottom: 1.2rem !important;
+            }
+            .cv-section h2 {
+                margin-bottom: 0.8rem !important;
+                padding-bottom: 0.3rem !important;
+                font-size: 1.1rem !important;
+            }
+            .cv-item {
+                margin-bottom: 0.8rem !important;
+                padding: 0 !important;
+                transform: none !important;
+            }
+            .skill-pill {
+                padding: 2px 8px !important;
+                font-size: 0.75rem !important;
+                border: 1px solid #ccc !important;
+                color: #333 !important;
+                background: #f9f9f9 !important;
+            }
+            .gradient-text { -webkit-text-fill-color: #111 !important; color: #111 !important; }
             * { animation: none !important; transition: none !important; }
         }
     </style>
@@ -161,6 +216,12 @@
                             <h3>Grado Medio en Sistemas Microinformáticos y Redes (SMIX)</h3>
                             <span class="date">2023 - Presente</span>
                             <p class="text-muted">Especialización en montaje de equipos, redes locales y sistemas operativos.</p>
+                        </div>
+                        <div class="cv-item">
+                            <h3>Educación Secundaria Obligatoria (ESO)</h3>
+                            <span class="company">IES RAMBLA PRIM</span>
+                            <span class="date">2017</span>
+                            <p class="text-muted">Graduado en Educación Secundaria Obligatoria.</p>
                         </div>
                     </section>
                 </div>
